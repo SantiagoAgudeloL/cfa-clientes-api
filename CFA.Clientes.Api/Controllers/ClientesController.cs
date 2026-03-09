@@ -64,4 +64,57 @@ public class ClientesController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("buscar/{nombre}")]
+    public async Task<IActionResult> BuscarClientes(string nombre)
+    {
+        var result = await _useCase.BuscarPorNombre(nombre);
+
+        return Ok(result);
+    }
+
+    [HttpGet("documento/{numero}")]
+    public async Task<IActionResult> BuscarPorDocumento(long numero)
+    {
+        var result = await _useCase.BuscarPorDocumento(numero);
+
+        return Ok(result);
+    }
+
+    [HttpGet("fecha")]
+    public async Task<IActionResult> BuscarPorFecha(
+      [FromQuery] DateTime inicio,
+      [FromQuery] DateTime fin)
+    {
+        var result = await _useCase.BuscarPorRangoFechas(inicio, fin);
+
+        return Ok(result);
+    }
+
+    [HttpGet("multiples-telefonos")]
+    public async Task<IActionResult> ClientesMultiplesTelefonos()
+    {
+        var result = await _useCase.ObtenerClientesMultiplesTelefonos();
+
+        return Ok(result);
+    }
+
+    [HttpGet("multiples-direcciones")]
+    public async Task<IActionResult> ClientesMultiplesDirecciones()
+    {
+        var result = await _useCase.ObtenerClientesMultiplesDirecciones();
+
+        return Ok(result);
+    }
+
+    [HttpGet("{id}/detalle")]
+    public async Task<IActionResult> ObtenerDetalleCliente(int id)
+    {
+        var result = await _useCase.ObtenerDetalleCliente(id);
+
+        if (result == null)
+            return NotFound("Cliente no encontrado");
+
+        return Ok(result);
+    }
 }
