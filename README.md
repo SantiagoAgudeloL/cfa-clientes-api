@@ -10,7 +10,7 @@ Sistema para el **registro, gestión y consulta de clientes** con sus teléfonos
 # Tecnologías utilizadas
 
 - C#
-- .NET
+- .NET SDK 10
 - ASP.NET Web API
 - Arquitectura Hexagonal
 - PostgreSQL
