@@ -1,1 +1,4 @@
-<Solution />
+<Solution>
+  <Project Path="CFA.Clientes.Api/CFA.Clientes.Api.csproj" />
+  <Project Path="CFA.Clientes.WF/CFA.Clientes.WF.csproj" />
+</Solution>
