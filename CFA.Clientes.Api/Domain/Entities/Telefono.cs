@@ -6,6 +6,6 @@
 
         public int ClienteCodigo { get; set; }
 
-        public long Numero { get; set; }
+        public long TelefonoNumero { get; set; }
     }
 }
