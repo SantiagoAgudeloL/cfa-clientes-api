@@ -14,6 +14,7 @@ Sistema para el **registro, gestión y consulta de clientes** con sus teléfonos
 - ASP.NET Web API
 - Arquitectura Hexagonal
 - PostgreSQL
+- Dapper
 - Windows Forms
 - Postman
 
